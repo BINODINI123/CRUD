@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<style>
+				table, th, td {
+				border: 1px solid black;
+				width:30%;
+				margin:40px;
+				height:20px;
+				}
+				th, td {
+					padding: 10px;
+					text-align: left;
+				}
+		</style>
+		<script>
+			function addRow()
+			{
+			
+				var name = document.getElementById("name").value;
+				var dob = document.getElementById("dob").value;
+				var gender = document.getElementById("gender").value;
+				var skills = document.getElementById("skills").value;
+				var checkbox = document.getElementById("checkbox").value;
+				
+				var table = document.getElementByTagName('tbody')[0];
+				
+				var newRow = table.insertRow(0);
+				
+				var cel1 = newRow.inserCell(0);
+				var cel2 = newRow.inserCell(1);
+				var cel3 = newRow.inserCell(2);
+				var cel4 = newRow.inserCell(3);
+				var cel5 = newRow.inserCell(4);
+				
+				cel1.innerHTML = name;
+				cel2.innerHTML = dob;
+				cel3.innerHTML = gender;
+				cel4.innerHTML = skills;
+				cel5.innerHTML = checkbox;
+			}
+		</script>
+		
+	</head>
+	<body>
+					<form>
+						<div>
+							Name:<input type="text" id="name" name="Name" /><br/><br/>
+							DOB:<input type="text" id="dob" name="Date of Birth" placeholder="dd / mm / yyyy" /><br/>
+							<label for="gender">Gender:</label>
+							<input type="radio" name="gender" value="0" id="gender">Male</input>
+							<input type="radio" name="gender" value="1" id="gender">Female</input><br/><br/>
+							Skills:<select name="JAVA" id="skills"><option>JAVA</option><option>CSS</option><option>JavaScript</option><option>HTML</option></select><br/>
+							<label>Hobbies:</label>
+							<input type="checkbox" id="checkbox">Cricket</input>
+							<input type="checkbox" id="checkbox">Tennis</input><br/>  
+							<div class="form-action-buttons">
+							<input type="button" id="add" value="Add/Update" onclick="addRow();">
+							</div>
+							<table class="list" id="List">
+								<thead>
+									<tr>
+						
+										<td>Name</td>
+										<td>Age</td>
+										<td>Gender</td>
+										<td>Skills</td>
+										<td>Hobbies</td>
+										
+						
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sandeep</td>
+										<td>21</td>
+										<td>Male</td>
+										<td>HTML,CSS</td>
+										<td>Cricket,Tennis</td>
+										<td><a href="#">Edit</a></td><td><a href="#">Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+				
+	</body>
+</html>
